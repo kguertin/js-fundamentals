@@ -5,7 +5,7 @@ const Gig = db.define("gig", {
   title: {
     type: Sequelize.STRING,
   },
-  technoligies: {
+  technologies: {
     type: Sequelize.STRING,
   },
   description: {
