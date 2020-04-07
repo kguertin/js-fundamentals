@@ -1,5 +1,9 @@
 const express = require("express");
+const Handlebars = require("handlebars");
 const exphbs = require("express-handlebars");
+const {
+  allowInsecurePrototypeAccess,
+} = require("@handlebars/allow-prototype-access");
 const bodyParser = require("body-parser");
 const path = require("path");
 
@@ -12,6 +16,19 @@ db.authenticate()
   .catch((err) => console.log("Error: ", err));
 
 const app = express();
+
+// Handlebars Middlewear
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+    handlebars: allowInsecurePrototypeAccess(Handlebars),
+  })
+);
+app.set("view engine", "handlebars");
+
+// Set Static Folder
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => res.send("INDEX"));
 
