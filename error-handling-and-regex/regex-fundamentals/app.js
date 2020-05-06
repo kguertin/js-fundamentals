@@ -30,7 +30,7 @@ re = /hello/i; // i = case insensitive
 // console.log(result)
 
 // replace() - return a new string with some or all matches of a pattern
-const string = 'Hello there';
-const newString = string.replace(re, 'Hi');
-console.log(newString)
+// const string = 'Hello there';
+// const newString = string.replace(re, 'Hi');
+// console.log(newString)
 
