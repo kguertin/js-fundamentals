@@ -30,8 +30,24 @@ re = /hel{2,}o/i // Must occur at least {m} times
 // Parentheses () - Grouping
 re = /^([0-9]x){3}$/
 
+// Short Hand Character Classes
+
+re = /\w/ //Word Character - alphanumeric or _
+re = /\w+/ // + = one or more
+re = /\W/ // nonword characters
+re = /\d/ // Will match any digit
+re = /\d+/ // + = one or more digit
+re = /\D/ // Non Digit Characters
+re = /\s/ // Match white space character
+re = /\S/ // Match non white space character
+re = /Hell\b/i //Word Boundary  - only get that specific word not another word that has it
+
+// Assertions 
+re = /x(?=y)/ // Match x only if it is folowed by y
+re = /x(?!y)/ // Match x only ig not followed by y
+
 // String to Match
-const str = '3x3x3x';
+const str = 'Hello welcomexj to Hell';
 
 const result = re.exec(str);
 console.log(result);
