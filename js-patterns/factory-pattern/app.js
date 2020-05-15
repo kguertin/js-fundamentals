@@ -37,6 +37,7 @@ const SuperMembership = function (name) {
 
 const members = [];
 const factory = new MemberFactory();
+
 members.push(factory.createMember('Kevin', 'standard'));
 members.push(factory.createMember('Mark', 'simple'));
 members.push(factory.createMember('Sally', 'super'))
